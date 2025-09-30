@@ -46,7 +46,7 @@ Take the existing app and add the following features:
 - It should be very easy for another developer to replace the LLM you used with another one (e.g. from OpenAI to Anthropic).
 
 #### Out of scope
-- There's no need to persist anything in the backend, in-memory storage is fine.
+- You do not need to run a database to store data in the backend, in-memory storage is fine.
 - Responsiveness or any other optimization for mobile devices is not required.
 - It is fine to assume there is only one user (no need for authentication or any sort of user context handling)
 - No need to write tests
