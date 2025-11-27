@@ -50,3 +50,6 @@ Take the existing app and add the following features:
 - Responsiveness or any other optimization for mobile devices is not required.
 - It is fine to assume there is only one user (no need for authentication or any sort of user context handling)
 - No need to write tests
+
+### Bonus Task
+- Add a visual AI Model selector in the chat homepage to allow switching between different models (eg. Gemini 2.5 Flash, GPT-5 mini) for the chat.
