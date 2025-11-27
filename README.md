@@ -58,4 +58,5 @@ Take the existing app and add the following features:
 The Deliverable: A Loom video (screen only is fine) showing:
 - A 2-5 minute explanation of how you built your solution.
 - A link to your repository.
-- Note: It's not required to show your face. Share your screen, walk us through your code logic, and show us the app working. We care about your clarity of thought, not your presentation skills.
+> [!Note] 
+> It's not required to show your face. Share your screen, walk us through your code logic, and show us the app working. We care about your clarity of thought, not your presentation skills.
