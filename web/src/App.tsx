@@ -1,35 +1,47 @@
-import React from 'react';
-import {Navbar} from "./components/navbar";
-import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
-import {HomePage} from "./pages/home-page";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import React from "react"
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+
+import { Navbar } from "./components/navbar"
+import { HomePage } from "./pages/home-page"
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: (
-            <>
-                <Navbar />
-                <div className={"px-8 pt-4 pb-16"}>
-                    <Outlet />
-                </div>
-            </>
-        ),
-        children: [
-            {
-                path: "/",
-                element: <HomePage />,
-            },
-        ]
-    }
-]);
+  {
+    path: "/",
+    element: (
+      <>
+        <Navbar />
+        <div className="px-8 pt-4 pb-16">
+          <Outlet />
+        </div>
+      </>
+    ),
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+    ],
+  },
+])
 
 function App() {
-    return <QueryClientProvider client={new QueryClient()}>
-        <RouterProvider router={router} />
-        <ReactQueryDevtools />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+  )
 }
 
-export default App;
+export default App

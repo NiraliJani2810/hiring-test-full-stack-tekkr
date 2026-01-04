@@ -2,6 +2,7 @@ import { join } from 'node:path'
 import AutoLoad from '@fastify/autoload'
 import { FastifyPluginAsync } from 'fastify'
 
+
 const app: FastifyPluginAsync = async (
   fastify
 ): Promise<void> => {
